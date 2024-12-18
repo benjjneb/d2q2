@@ -7,12 +7,13 @@
 # ----------------------------------------------------------------------------
 
 from ._denoise import denoise_single, denoise_paired, denoise_pyro, denoise_ccs
-from ._version import get_versions
 from ._stats import DADA2Stats, DADA2StatsDirFmt, DADA2StatsFormat
 
 
-__version__ = get_versions()['version']
-del get_versions
+try:
+    from ._version import __version__
+except ModuleNotFoundError:
+    __version__ = '0.0.0+notfound'
 
 __all__ = ['denoise_single', 'denoise_paired', 'denoise_pyro', 'denoise_ccs',
            'DADA2Stats', 'DADA2StatsFormat', 'DADA2StatsDirFmt']

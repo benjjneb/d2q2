@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: dfb0404
+_src_path: https://github.com/qiime2/q2-setup-template.git
+module_name: dada2
+plugin_name: q2_dada2
+plugin_scripts: q2_dada2/assets/run_dada.R
+project_author_email: gregcaporaso@gmail.com
+project_author_name: Greg Caporaso and Benjamin Callahan
+project_description: Apply DADA2 to generate denoised sequence variants.
+project_name: q2-dada2
+project_urls_homepage: https://qiime2.org
+project_urls_repository: https://github.com/qiime2/q2-dada2
