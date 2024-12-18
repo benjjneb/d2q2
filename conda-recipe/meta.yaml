@@ -1,0 +1,39 @@
+package:
+  name: q2-dada2
+  version: {{ PLUGIN_VERSION }}
+source:
+  path: ..
+build:
+  script: make install
+requirements:
+  host:
+  - python {{ python }}
+  - setuptools
+  - versioningit
+  - wheel
+  run:
+  - python {{ python }}
+  - biom-format {{ biom_format }}
+  - bioconductor-dada2
+  - r-base {{ r_base }}
+  - r-optparse >=1.7.1
+  - openjdk
+  - qiime2 {{ qiime2_epoch }}.*
+  - q2-types {{ qiime2_epoch }}.*
+  build:
+  - setuptools
+  - versioningit
+test:
+  requires:
+  - qiime2 >={{ qiime2 }}
+  - q2-types >={{ q2_types }}
+  - pytest
+  imports:
+  - q2_dada2
+  - qiime2.plugins.dada2
+  commands:
+  - py.test --pyargs q2_dada2
+about:
+  home: https://qiime2.org
+  license: BSD-3-Clause
+  license_family: BSD
