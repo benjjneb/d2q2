@@ -70,3 +70,7 @@ target/
 
 .DS_Store
 .Rhistory
+
+# Version file from versioningit
+_version.py
+
