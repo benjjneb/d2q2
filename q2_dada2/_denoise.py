@@ -18,24 +18,12 @@ import qiime2.util
 import pandas as pd
 import numpy as np
 
+from qiime2.sdk.util import run_commands
+
 from q2_types.feature_data import DNAIterator
 from q2_types.per_sample_sequences import (
     SingleLanePerSampleSingleEndFastqDirFmt,
     SingleLanePerSamplePairedEndFastqDirFmt)
-
-
-def run_commands(cmds, verbose=True):
-    if verbose:
-        print("Running external command line application(s). This may print "
-              "messages to stdout and/or stderr.")
-        print("The command(s) being run are below. These commands cannot "
-              "be manually re-run as they will depend on temporary files that "
-              "no longer exist.")
-    for cmd in cmds:
-        if verbose:
-            print("\nCommand:", end=' ')
-            print(" ".join(cmd), end='\n\n')
-        subprocess.run(cmd, check=True)
 
 
 def _check_featureless_table(fp):
