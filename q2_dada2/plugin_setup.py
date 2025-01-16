@@ -21,6 +21,7 @@ import q2_dada2._examples as ex
 _POOL_OPT = {'pseudo', 'independent'}
 _CHIM_OPT = {'consensus', 'none'}
 
+citations = qiime2.plugin.Citations.load('citations.bib', package='q2_dada2')
 plugin = qiime2.plugin.Plugin(
     name='dada2',
     version=q2_dada2.__version__,
@@ -29,8 +30,7 @@ plugin = qiime2.plugin.Plugin(
     description=('This QIIME 2 plugin wraps DADA2 and supports '
                  'sequence quality control for single-end and paired-end '
                  'reads using the DADA2 R library.'),
-    short_description='Plugin for sequence quality control with DADA2.',
-    citations=qiime2.plugin.Citations.load('citations.bib', package='q2_dada2')
+    short_description='Plugin for sequence quality control with DADA2.'
 )
 
 
@@ -512,7 +512,8 @@ plugin.methods.register_function(
     description='This method denoises single-end Pacbio CCS sequences, '
                 'dereplicates them, and filters chimeras. '
                 'Tutorial and workflow: '
-                'https://github.com/benjjneb/LRASManuscript'
+                'https://github.com/benjjneb/LRASManuscript',
+    citations=[citations['callahan2019dada2ccs']]
 )
 
 
